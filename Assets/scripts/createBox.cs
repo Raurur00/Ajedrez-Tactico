@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.IO;
 
 public class createBox : MonoBehaviour {
+
+    //Traer variables de tablero
 
 	public GameObject CasillaPrefab;
 	public int Ancho;
@@ -15,7 +19,12 @@ public class createBox : MonoBehaviour {
 	private Pieza piezaSeleccionada;
 	private Box casillaSeleccionada;
 
-	GameObject[,] tablero;
+    //Traer variables de piezas
+
+    public GameObject torre, caballo, peon, alfil, reina, rey;
+    private GameObject[] listaPiezas;
+
+    GameObject[,] tablero;
 
 	//public GameObject Torre;
 
@@ -27,7 +36,8 @@ public class createBox : MonoBehaviour {
 			}
 		}
 		coloreoPorDefecto(tablero);
-	}
+        
+    }
 
 	public void coloreoPorDefecto(GameObject[,] tablero){
 		for(int i = 0;i<Ancho;i++){
@@ -50,10 +60,51 @@ public class createBox : MonoBehaviour {
 			}
 		}
 	}
+    public void leerArchivo()
+    {
+        StreamReader objReader = new StreamReader("C:/Users/Nicolas/Documents/GitHub/Ajedrez-Tactico/Assets/levels/tablero_1.txt");
+        string sLine = "";
+        //ArrayList arrText = new ArrayList();
+        sLine = objReader.ReadLine();
+        string[] space = sLine.Split(' ');
+        Debug.Log(space[0]);
+        Debug.Log(space[1]);
+        Ancho = Int32.Parse(space[0]);
+        Alto = Int32.Parse(space[1]);
+        tablero = new GameObject[Ancho, Alto];
+
+        for (int i = 0; i < Ancho; i++)
+        {
+            sLine = objReader.ReadLine();
+            if (sLine != null)
+            {
+                space = sLine.Split(' ');
+                for (int j = 0; j < Alto; j++)
+                {
+                    Debug.Log(space);
+                    //Instantiate(listaPiezas[Int32.Parse(space[j]) - 1], new Vector3(i, 0, j), new Quaternion(1f, 0f, 0f, 0f));
+                }
+
+                // Debug.Log(sLine);
+                //Debug.Log(space);
+            }
+           
+        }
+        objReader.Close();
+    }
 
 	void Start(){
-		tablero = new GameObject[8,8];
-		crear();
+        leerArchivo();
+		// tablero = new GameObject[8,8];
+        listaPiezas = new GameObject[6];
+        listaPiezas[0] = torre;
+        listaPiezas[1] = caballo;
+        listaPiezas[2] = peon;
+        listaPiezas[3] = alfil;
+        listaPiezas[4] = reina;
+        listaPiezas[5] = rey;
+        crear();
+
 	}
 
 	void Update()
