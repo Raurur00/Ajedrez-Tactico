@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1853147144505670}
+  m_IsPrefabAsset: 1
+--- !u!1 &1853147144505670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4307023987690286}
+  - component: {fileID: 114384137660125296}
+  m_Layer: 0
+  m_Name: Crear_Tablero
+  m_TagString: Respawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4307023987690286
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853147144505670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114384137660125296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853147144505670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f591bdb369836499e52ccb9a9cd0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CasillaPrefab: {fileID: 1314405673950972, guid: 71a6fbe0f14a0a34da3f72f63532bdca,
+    type: 2}
+  Ancho: 8
+  Alto: 8
+  Blanco: {fileID: 2100000, guid: 0e5d30d5a4216794c82788c91ef963b1, type: 2}
+  Negro: {fileID: 2100000, guid: 4a26efb68cee4544f8fc78e0a8cf9ef0, type: 2}
+  colorSeleccion: {fileID: 2100000, guid: c645f8cb7ed200c4cb23a643d298cd32, type: 2}
+  torre: {fileID: 1544287578776064, guid: 3b34ed6dff26bd24abf6a7d876ec3cea, type: 2}
+  caballo: {fileID: 1707279309001306, guid: 6f3d0a0a280d9c4479ebea1268b99337, type: 2}
+  peon: {fileID: 1870271301204862, guid: 572bcd51e38e4b24fb1ff022f9c58dfa, type: 2}
+  alfil: {fileID: 1990473014247296, guid: 6a9ccd95d9b20fa49967b4a8b8a783fb, type: 2}
+  reina: {fileID: 1207298562938086, guid: c97b9b8297c114d4c8bb799e9ef1b6c3, type: 2}
+  rey: {fileID: 1602549990111446, guid: 662de2faca2ae6e4eb7face6ab4d3a36, type: 2}
