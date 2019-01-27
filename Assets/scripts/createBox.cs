@@ -20,14 +20,11 @@ public class createBox : MonoBehaviour {
 	private Box casillaSeleccionada;
 
     //Traer variables de piezas
-
     public GameObject torre, caballo, peon, alfil, reina, rey;
     private GameObject[] listaPiezas;
-
     GameObject[,] tablero;
 
 	//public GameObject Torre;
-
 	public void crear(){
 		for(int i = 0;i<Ancho;i++){
 			for(int j=0;j<Alto;j++){
@@ -38,7 +35,7 @@ public class createBox : MonoBehaviour {
 		coloreoPorDefecto(tablero);
         
     }
-
+    //Color por defecto del GameObject
 	public void coloreoPorDefecto(GameObject[,] tablero){
 		for(int i = 0;i<Ancho;i++){
 			for(int j=0;j<Alto;j++){
@@ -52,7 +49,7 @@ public class createBox : MonoBehaviour {
 			}
 		}
 	}
-
+    //Desseleccinar Todo  
 	public void deseleccionarTodo(GameObject[,] tablero){
 		for (int i=0;i<Ancho;i++){
 			for(int j=0;j<Alto;j++){
@@ -60,6 +57,8 @@ public class createBox : MonoBehaviour {
 			}
 		}
 	}
+    
+    //Leer Archivo de texto del mapa (0 = Casilla Vacia, 1 = Torre, 2 = caballo, 3 = Peon, )
     public void leerArchivo()
     {
         StreamReader objReader = new StreamReader("C:/Users/Nicolas/Documents/GitHub/Ajedrez-Tactico/Assets/levels/tablero_1.txt");
@@ -79,23 +78,24 @@ public class createBox : MonoBehaviour {
             if (sLine != null)
             {
                 space = sLine.Split(' ');
+
                 for (int j = 0; j < Alto; j++)
                 {
-                    Debug.Log(space);
-                    //Instantiate(listaPiezas[Int32.Parse(space[j]) - 1], new Vector3(i, 0, j), new Quaternion(1f, 0f, 0f, 0f));
+                    if (space[j] == "A" || space[j] == "0")
+                    {
+                        break;
+                    }
+                    Debug.Log(space[j]);
+                    Instantiate(listaPiezas[Int32.Parse(space[j])-1], new Vector3(i, 0.1f, j), Quaternion.Euler(-90,0,0));
                 }
-
-                // Debug.Log(sLine);
-                //Debug.Log(space);
             }
-           
+ 
         }
         objReader.Close();
     }
 
 	void Start(){
-        leerArchivo();
-		// tablero = new GameObject[8,8];
+
         listaPiezas = new GameObject[6];
         listaPiezas[0] = torre;
         listaPiezas[1] = caballo;
@@ -103,6 +103,7 @@ public class createBox : MonoBehaviour {
         listaPiezas[3] = alfil;
         listaPiezas[4] = reina;
         listaPiezas[5] = rey;
+        leerArchivo();
         crear();
 
 	}
