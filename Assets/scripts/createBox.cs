@@ -24,8 +24,7 @@ public class createBox : MonoBehaviour {
     private GameObject[] listaPiezas;
     GameObject[,] tablero;
 
-	//public GameObject Torre;
-	public void crear(){
+	public void crear_Tablero(){
 		for(int i = 0;i<Ancho;i++){
 			for(int j=0;j<Alto;j++){
 				GameObject casillaTemp = Instantiate(CasillaPrefab,new Vector3(i,0,j),Quaternion.identity);
@@ -61,7 +60,7 @@ public class createBox : MonoBehaviour {
     //Leer Archivo de texto del mapa (0 = Casilla Vacia, 1 = Torre, 2 = caballo, 3 = Peon, )
     public void leerArchivo()
     {
-        StreamReader objReader = new StreamReader("C:/Users/Nicolas/Documents/GitHub/Ajedrez-Tactico/Assets/levels/tablero_1.txt");
+        StreamReader objReader = new StreamReader("Assets/levels/tablero_1.txt");
         string sLine = "";
         //ArrayList arrText = new ArrayList();
         sLine = objReader.ReadLine();
@@ -104,9 +103,9 @@ public class createBox : MonoBehaviour {
         listaPiezas[4] = reina;
         listaPiezas[5] = rey;
         leerArchivo();
-        crear();
+        crear_Tablero();
 
-	}
+    }
 
 	void Update()
 	{
