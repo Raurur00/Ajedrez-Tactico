@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajedrez Mutante", "Assembly-CSharp.csproj", "{BF9BFA3F-1F36-C0A2-235D-AD752244A6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajedrez Mutante", "Assembly-CSharp-Editor.csproj", "{9F73F4CE-ECB9-994B-40AF-34B2627E53BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF9BFA3F-1F36-C0A2-235D-AD752244A6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9BFA3F-1F36-C0A2-235D-AD752244A6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9BFA3F-1F36-C0A2-235D-AD752244A6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9BFA3F-1F36-C0A2-235D-AD752244A6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F73F4CE-ECB9-994B-40AF-34B2627E53BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F73F4CE-ECB9-994B-40AF-34B2627E53BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F73F4CE-ECB9-994B-40AF-34B2627E53BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F73F4CE-ECB9-994B-40AF-34B2627E53BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
